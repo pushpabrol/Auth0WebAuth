@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (4.0.1)
+  - Auth0 (1.0.0)
+  - JWTDecode (2.0.0)
+  - SimpleKeychain (0.7.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Auth0 (= 1.0.0)
+  - JWTDecode
+  - SimpleKeychain
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Auth0: 3ff1a10fe8f6a323b171de883a8b9f08d29529b2
+  JWTDecode: 178e47e5d28d3abcff778bacced8342858cd6cb5
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
+
+PODFILE CHECKSUM: b4d409cd3aceacb903535646ab85eb48be60cc8a
+
+COCOAPODS: 1.1.1
