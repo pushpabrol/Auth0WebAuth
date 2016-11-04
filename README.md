@@ -27,4 +27,4 @@
 </dict>
 </plist>
 ```
-- The endpoint of the API 
+- The endpoint of the API is defined under Info.plist and is assumed to be http://localhost:3001 - The project for the API is under https://github.com/pushpabrol/nodejs-api-rs
