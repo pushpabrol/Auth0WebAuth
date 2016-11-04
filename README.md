@@ -1,10 +1,10 @@
 # Auth0WebAuth
 
-- A project using Auth0.swift to show Login via an iOS app and generating both access_token and refresh_token for sign in
+- A project using Auth0.swift to show Login via an iOS app and generating both access_token and refresh_token for sign in and calling an API
 
 
 ## How it works
- - User signs in using this App which uses a web view. The user authenticates with the `audience=Identifier_for_API as defined within Auth0` and the `scope = openid profile offline_access api:scopes` where api:scopes represents the set of scopes the user will consent to allow the App to present to the API.
+ - User signs in using this App which uses a auth0 SDK that launches the login within a web view. The user authenticates with the `audience=Identifier_for_API as defined within Auth0` and the `scope = openid profile offline_access api:scopes` where api:scopes represents the set of scopes the user will consent to allow the App to present to the API.
  
  ### Please read the note below before setting up the Client App within Auth0
  - Create a Client within Auth0 and see the link -> https://github.com/auth0/Auth0.swift#web-based-auth-ios-only to set the settings based on your iOS App
