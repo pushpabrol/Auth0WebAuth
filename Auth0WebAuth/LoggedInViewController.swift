@@ -21,10 +21,10 @@ class LoggedInViewController : UIViewController {
         
         do {
             let jwt = try decode(jwt: A0SimpleKeychain().string(forKey: "idToken")!)
-            print(jwt.audience?.first)
+                
                         welcomeText.text = "Hi " + (jwt.body["name"] as! String!) + ""
             
-                        accessToken.text = "You have successfuly logged into Auth0 and now have an access_token for API with audience: " + Application.sharedInstance.API_AUDIENCE! + ". You also have been granted an access token which means on closing and opening this app you will not have to sign in again"
+                        accessToken.text = "You have successfuly logged into Auth0 and now have an access_token for API with audience: " + Application.sharedInstance.API_AUDIENCE! + ". You also have been granted an refresh token which means on closing and opening this app you will not have to sign in again"
         }
         catch let error as NSError {
             print(error.localizedDescription)
@@ -65,7 +65,7 @@ class LoggedInViewController : UIViewController {
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                 
                 self.present(alertController, animated: true, completion: nil)
-
+  
             }
         }
         
@@ -74,12 +74,20 @@ class LoggedInViewController : UIViewController {
     }
         
     @IBAction func logout(_ sender: AnyObject) {
+        A0SimpleKeychain().clearAll()
         
         let alertController = UIAlertController(title: "Logout", message:
-            "Coming soon...", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            "Deleting tokens for now. SSO still exists..", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: {(alert: UIAlertAction) in
+            self.performSegue(withIdentifier: "loginView", sender: self)
+            
+        
+        }))
         
         self.present(alertController, animated: true, completion: nil)
+        
+        
+        
 
         
     }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Domain</key>
-	<string>{AUTH0_DOMAIN}</string>
-	<key>ClientId</key>
-	<string>{AUTH0_CLIENTID}</string>
-	<key>API_AUDIENCE</key>
-	<string>{RS_API_AUDIENCE}</string>
-	<key>scope</key>
-	<string>openid profile offline_access api_scopes</string>
-</dict>
+    <dict>
+        <key>Domain</key>
+        <string>{AUTH0_DOMAIN}</string>
+        <key>ClientId</key>
+        <string>{AUTH0_CLIENTID}</string>
+        <key>API_AUDIENCE</key>
+        <string>{RS_API_AUDIENCE}</string>
+        <key>scope</key>
+        <string>openid profile offline_access api_scopes</string>
+    </dict>
 </plist>

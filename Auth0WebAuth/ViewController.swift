@@ -18,15 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if (A0SimpleKeychain().string(forKey: "refreshToken") != nil)
-        {
-            getTokens(fromRefreshToken: A0SimpleKeychain().string(forKey: "refreshToken")! )
-            self.performSegue(withIdentifier: "loggedin", sender: self)
-            
-            
-            
-        }
-        
+        checkRefreshTokenAndPerformSegue()
         
             }
 
@@ -49,8 +41,7 @@ class ViewController: UIViewController {
                     print("credentials: \(credentials)")
                     do {
                     let jwt = try decode(jwt: credentials.idToken!)
-                        print(jwt.audience?.first)
-                        if(app.audience! == jwt.audience?.first && jwt.issuer == "https://" + app.domain! + "/")
+                        if(JWtHelper.isTokenValid(token: jwt))
                         {
                             A0SimpleKeychain().setString(credentials.accessToken, forKey: "accessToken")
                             A0SimpleKeychain().setString(credentials.idToken!, forKey: "idToken")
@@ -59,9 +50,9 @@ class ViewController: UIViewController {
                         }
                         else
                         {
-                            print("JWT Validation failed on audience check");
+                            print("Your session is no longer valid.");
                             let alertController = UIAlertController(title: "JWT Validation", message:
-                                "JWT Validation failed on audience check", preferredStyle: UIAlertControllerStyle.alert)
+                                "JWT Validation failed", preferredStyle: UIAlertControllerStyle.alert)
                             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                             
                             self.present(alertController, animated: true, completion: nil)
@@ -89,9 +80,17 @@ class ViewController: UIViewController {
 
     }
     
-    func callAPI() {
-   
-            }
+    func checkRefreshTokenAndPerformSegue()  {
+        if (A0SimpleKeychain().string(forKey: "refreshToken") != nil)
+        {
+            getTokens(fromRefreshToken: A0SimpleKeychain().string(forKey: "refreshToken")! )
+            self.performSegue(withIdentifier: "loggedin", sender: self)
+            
+            
+            
+        }
+        
+    }
     
     func getTokens(fromRefreshToken: String){
         let app = Application.sharedInstance

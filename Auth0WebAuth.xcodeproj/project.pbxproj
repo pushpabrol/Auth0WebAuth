@@ -10,6 +10,7 @@
 		116F9C521DCA74EC0060834F /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 116F9C511DCA74EC0060834F /* Auth0.plist */; };
 		116F9C541DCAEB1B0060834F /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F9C531DCAEB1B0060834F /* LoggedInViewController.swift */; };
 		116F9C581DCC26530060834F /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F9C571DCC26530060834F /* Application.swift */; };
+		116F9C5A1DCE13940060834F /* JWtHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F9C591DCE13940060834F /* JWtHelper.swift */; };
 		11D2A3751DCA6ABA0094ED6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2A3741DCA6ABA0094ED6E /* AppDelegate.swift */; };
 		11D2A3771DCA6ABA0094ED6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D2A3761DCA6ABA0094ED6E /* ViewController.swift */; };
 		11D2A37A1DCA6ABA0094ED6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D2A3781DCA6ABA0094ED6E /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		116F9C531DCAEB1B0060834F /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		116F9C561DCAEDAE0060834F /* Auth0WebAuth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Auth0WebAuth.entitlements; sourceTree = "<group>"; };
 		116F9C571DCC26530060834F /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		116F9C591DCE13940060834F /* JWtHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWtHelper.swift; sourceTree = "<group>"; };
 		11D2A3711DCA6ABA0094ED6E /* Auth0WebAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auth0WebAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D2A3741DCA6ABA0094ED6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D2A3761DCA6ABA0094ED6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				11D2A3801DCA6ABA0094ED6E /* Info.plist */,
 				116F9C511DCA74EC0060834F /* Auth0.plist */,
 				116F9C571DCC26530060834F /* Application.swift */,
+				116F9C591DCE13940060834F /* JWtHelper.swift */,
 			);
 			path = Auth0WebAuth;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				116F9C581DCC26530060834F /* Application.swift in Sources */,
 				116F9C541DCAEB1B0060834F /* LoggedInViewController.swift in Sources */,
 				11D2A3771DCA6ABA0094ED6E /* ViewController.swift in Sources */,
+				116F9C5A1DCE13940060834F /* JWtHelper.swift in Sources */,
 				11D2A3751DCA6ABA0094ED6E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -119,6 +119,7 @@
                     <connections>
                         <outlet property="accessToken" destination="K5z-Yc-Enk" id="DTt-di-xiB"/>
                         <outlet property="welcomeText" destination="9LJ-vy-PeE" id="bOZ-0v-HkK"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginView" id="0yB-QK-MH4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSg-v7-a3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,4 +145,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0yB-QK-MH4"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -33,5 +33,7 @@ class Application {
         self.scope = dict!.object(forKey: "scope") as? String
 
     }
+    
+    
 }
 
