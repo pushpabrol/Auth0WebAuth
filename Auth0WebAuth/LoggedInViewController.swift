@@ -22,9 +22,21 @@ class LoggedInViewController : UIViewController {
         do {
             let jwt = try decode(jwt: A0SimpleKeychain().string(forKey: "idToken")!)
                 
-                        welcomeText.text = "Hi " + (jwt.body["name"] as! String!) + ""
+            welcomeText.text = "Hi " + ( (jwt.body["email"] != nil ? jwt.body["email"] : jwt.body["name"])  as! String!) + ""
             
-                        accessToken.text = "You have successfuly logged into Auth0 and now have an access_token for API with audience: " + Application.sharedInstance.API_AUDIENCE! + ". You also have been granted an refresh token which means on closing and opening this app you will not have to sign in again"
+                        accessToken.text = "This is a sample app. You have successfuly logged into Auth0 and now have an access_token to invoke API with audience: " + Application.sharedInstance.API_AUDIENCE! + ". You also have been granted a refresh token which means on closing and opening this app you will not have to sign in again. The refresh token will be used to get a new id_token and access_token."
+            
+            if (jwt.body["picture"] != nil)
+            
+            {
+            URLSession.shared.dataTask(with: URL(string : jwt.body["picture"] as! String)!, completionHandler: { data, response, error in
+                DispatchQueue.main.async {
+                    guard let data = data , error == nil else { return }
+                    self.profileImage.image = UIImage(data: data)
+
+                }
+            }).resume()
+            }
         }
         catch let error as NSError {
             print(error.localizedDescription)
@@ -37,6 +49,7 @@ class LoggedInViewController : UIViewController {
 
         
     }
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
