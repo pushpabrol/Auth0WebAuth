@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,18 +19,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmE-sh-okx">
-                                <frame key="frameInset" minX="108" minY="318" width="169" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login">
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmE-sh-okx">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ceD-6p-9lq"/>
+                                </constraints>
+                                <state key="normal" title="Login" backgroundImage="btn_main_normal">
                                     <color key="titleColor" red="1" green="0.36826884362187584" blue="0.25483407796144553" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="clickOnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dI9-cF-xIb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth0-logo" translatesAutoresizingMaskIntoConstraints="NO" id="bN2-FP-xls">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="3cq-i2-W64"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bN2-FP-xls" firstAttribute="centerX" secondItem="rmE-sh-okx" secondAttribute="centerX" id="Nji-ZM-oUy"/>
+                            <constraint firstItem="bN2-FP-xls" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OHc-vP-Eoy"/>
+                            <constraint firstItem="rmE-sh-okx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="T7F-J6-Czf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rmE-sh-okx" secondAttribute="bottom" constant="41" id="aYw-fh-hQr"/>
+                            <constraint firstItem="bN2-FP-xls" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="izA-bT-7KE"/>
+                            <constraint firstItem="bN2-FP-xls" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="146" id="lke-8V-A34"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vnc-KK-njs"/>
                     <connections>
@@ -52,48 +67,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" indicatorStyle="black" editable="NO" text="Welcome Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9LJ-vy-PeE">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="black" editable="NO" text="Welcome Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9LJ-vy-PeE">
                                 <frame key="frameInset" minX="16" minY="108" width="306" height="89"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="erd-tO-7Sq" userLabel="height = 50"/>
-                                    <constraint firstAttribute="width" constant="300" id="s1y-uF-WJs"/>
+                                    <constraint firstAttribute="width" constant="300" id="iJW-NL-AcL"/>
+                                    <constraint firstAttribute="height" constant="50" id="mbW-8P-Gan"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Access Token" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-Yc-Enk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Access Token" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-Yc-Enk">
                                 <frame key="frameInset" minX="16" minY="248" width="328" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="hox-w4-FWz"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="wz5-gk-u8L" userLabel="height = 300"/>
+                                    <constraint firstAttribute="height" constant="150" id="wz5-gk-u8L" userLabel="height = 150"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smr-e6-d92">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smr-e6-d92">
                                 <frame key="frameInset" minX="44" minY="617" width="294" height="30"/>
                                 <color key="backgroundColor" red="0.4627181066278041" green="0.61069550297534914" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="294" id="eJr-WM-Jq3" userLabel="width = 300"/>
                                     <constraint firstAttribute="height" constant="30" id="kzZ-cc-8Y6"/>
                                 </constraints>
-                                <state key="normal" title="Logout">
+                                <state key="normal" title="Logout" backgroundImage="square-rounded-xxl">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <action selector="logout:" destination="4xZ-U7-tiW" eventType="touchUpInside" id="vau-5s-m8k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h43-vb-BEY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h43-vb-BEY">
                                 <frame key="frameInset" minX="44" minY="469" width="294" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.42653078290796109" blue="0.29502262002778734" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="soh-94-ddN"/>
                                     <constraint firstAttribute="width" constant="300" id="wGb-SK-FT4"/>
                                 </constraints>
-                                <state key="normal" title="Call API">
+                                <state key="normal" title="Call API" backgroundImage="btn_main_normal">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -109,8 +124,10 @@
                             <constraint firstItem="smr-e6-d92" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leading" constant="20" symbolic="YES" id="Es0-1i-9zw"/>
                             <constraint firstItem="K5z-Yc-Enk" firstAttribute="top" secondItem="9LJ-vy-PeE" secondAttribute="bottom" constant="8" symbolic="YES" id="Hcp-XH-Oa9"/>
                             <constraint firstItem="9LJ-vy-PeE" firstAttribute="centerX" secondItem="f2T-ff-3Co" secondAttribute="centerX" id="IqM-bZ-zUl"/>
+                            <constraint firstItem="9LJ-vy-PeE" firstAttribute="top" secondItem="GRi-DF-h3Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Rqf-Xx-6wc"/>
                             <constraint firstItem="smr-e6-d92" firstAttribute="top" secondItem="h43-vb-BEY" secondAttribute="bottom" constant="118" id="Veg-aT-UZH"/>
                             <constraint firstItem="K5z-Yc-Enk" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leading" constant="20" symbolic="YES" id="WJi-yE-bUV"/>
+                            <constraint firstItem="9LJ-vy-PeE" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leading" constant="20" symbolic="YES" id="XBQ-Hs-DYH"/>
                             <constraint firstItem="h43-vb-BEY" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leading" constant="20" symbolic="YES" id="sKD-Xc-YNG"/>
                             <constraint firstItem="K5z-Yc-Enk" firstAttribute="centerX" secondItem="f2T-ff-3Co" secondAttribute="centerX" id="sYS-SE-5dm"/>
                             <constraint firstItem="h43-vb-BEY" firstAttribute="top" secondItem="K5z-Yc-Enk" secondAttribute="bottom" constant="8" symbolic="YES" id="xMd-W5-K12" userLabel="Call API.top = Access Token.bottom + 100"/>
@@ -145,6 +162,11 @@
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="auth0-logo" width="165" height="60"/>
+        <image name="btn_main_normal" width="7" height="7"/>
+        <image name="square-rounded-xxl" width="256" height="256"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0yB-QK-MH4"/>
     </inferredMetricsTieBreakers>
