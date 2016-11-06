@@ -9,6 +9,6 @@
         <key>API_AUDIENCE</key>
         <string>{RS_API_AUDIENCE}</string>
         <key>scope</key>
-        <string>openid profile offline_access api_scopes</string>
+        <string>openid profile picture email offline_access do:something</string>
     </dict>
 </plist>

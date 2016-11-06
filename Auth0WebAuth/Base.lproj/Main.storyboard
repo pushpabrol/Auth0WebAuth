@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,31 +70,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="black" editable="NO" text="Welcome Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9LJ-vy-PeE">
-                                <frame key="frameInset" minX="16" minY="35" width="306" height="34"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" text="Welcome Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9LJ-vy-PeE">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Access Token" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-Yc-Enk">
-                                <frame key="frameInset" minX="16" minY="324" width="328" height="147"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Access Token" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-Yc-Enk">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h43-vb-BEY">
-                                <color key="backgroundColor" red="1" green="0.42653078290796109" blue="0.29502262002778734" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="8wr-GX-KkJ"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="Id0-Ar-3av"/>
+                                    <constraint firstAttribute="width" secondItem="K5z-Yc-Enk" secondAttribute="height" multiplier="16:9" id="XOH-z8-ghG"/>
                                 </constraints>
-                                <state key="normal" title="Call API" backgroundImage="btn_main_normal">
-                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="invokeApi:" destination="4xZ-U7-tiW" eventType="touchUpInside" id="svk-eQ-war"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smr-e6-d92">
                                 <color key="backgroundColor" red="0.4627181066278041" green="0.61069550297534914" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -106,31 +96,42 @@
                                     <action selector="logout:" destination="4xZ-U7-tiW" eventType="touchUpInside" id="vau-5s-m8k"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="profileImage" image="auth0-logo" translatesAutoresizingMaskIntoConstraints="NO" id="IRi-pz-Y51">
-                                <frame key="frameInset" minX="67" minY="77" width="241" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="profileImage" image="auth0-logo" translatesAutoresizingMaskIntoConstraints="NO" id="IRi-pz-Y51">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="XZd-xm-9Qp"/>
+                                    <constraint firstAttribute="width" secondItem="IRi-pz-Y51" secondAttribute="height" multiplier="4:3" id="D4a-dD-Xs4" userLabel="aspect = 4:3"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="DLY-oU-W8G"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="pCr-AY-blJ"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h43-vb-BEY">
+                                <color key="backgroundColor" red="1" green="0.42653078290796109" blue="0.29502262002778734" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kgd-sS-wgd"/>
+                                </constraints>
+                                <state key="normal" title="Call API" backgroundImage="btn_main_normal">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="invokeApi:" destination="4xZ-U7-tiW" eventType="touchUpInside" id="svk-eQ-war"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IRi-pz-Y51" firstAttribute="centerX" secondItem="f2T-ff-3Co" secondAttribute="centerX" id="1Ue-zO-F5d"/>
-                            <constraint firstAttribute="bottom" secondItem="smr-e6-d92" secondAttribute="bottom" constant="20" symbolic="YES" id="1pb-dT-mdg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h43-vb-BEY" secondAttribute="trailing" constant="21" id="6tw-08-2CE"/>
-                            <constraint firstItem="9LJ-vy-PeE" firstAttribute="leading" secondItem="K5z-Yc-Enk" secondAttribute="leading" id="AOt-Lm-WW7"/>
-                            <constraint firstItem="smr-e6-d92" firstAttribute="top" secondItem="h43-vb-BEY" secondAttribute="bottom" constant="46" id="Emd-uf-oNK" userLabel="Logout.top = Call API.bottom + 20"/>
-                            <constraint firstItem="h43-vb-BEY" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leadingMargin" constant="28" id="FXt-OL-hqp"/>
-                            <constraint firstItem="h43-vb-BEY" firstAttribute="trailing" secondItem="smr-e6-d92" secondAttribute="trailing" id="LOR-Gh-uRb"/>
-                            <constraint firstItem="IRi-pz-Y51" firstAttribute="top" secondItem="9LJ-vy-PeE" secondAttribute="bottom" constant="19" id="PXd-me-yrD" userLabel="Profile Image.top = Welcome Text.bottom + 10"/>
-                            <constraint firstItem="h43-vb-BEY" firstAttribute="leading" secondItem="smr-e6-d92" secondAttribute="leading" id="U6y-HM-H8u"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K5z-Yc-Enk" secondAttribute="trailing" constant="15" id="czb-qa-JMT"/>
-                            <constraint firstItem="IRi-pz-Y51" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leadingMargin" constant="51" id="djF-LO-TWT"/>
-                            <constraint firstItem="h43-vb-BEY" firstAttribute="top" secondItem="K5z-Yc-Enk" secondAttribute="bottom" constant="21" id="nbU-Qi-Hvt" userLabel="Call API.top = Access Token.bottom + 10"/>
-                            <constraint firstItem="9LJ-vy-PeE" firstAttribute="top" secondItem="GRi-DF-h3Q" secondAttribute="bottom" constant="88" id="o11-OA-RPg" userLabel="Welcome Text.top = Top Layout Guide.bottom + 10"/>
-                            <constraint firstItem="9LJ-vy-PeE" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leadingMargin" id="rXE-4H-aw9"/>
-                            <constraint firstItem="K5z-Yc-Enk" firstAttribute="top" secondItem="IRi-pz-Y51" secondAttribute="bottom" constant="48" id="sGL-6e-SU0" userLabel="Access Token.top = Profile Image.bottom + 10"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9LJ-vy-PeE" secondAttribute="trailing" constant="37" id="uZr-EP-QO6"/>
+                            <constraint firstItem="9LJ-vy-PeE" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leadingMargin" constant="18" id="4Vf-hE-1hn"/>
+                            <constraint firstItem="IRi-pz-Y51" firstAttribute="leading" secondItem="f2T-ff-3Co" secondAttribute="leadingMargin" id="7jY-N7-YaQ"/>
+                            <constraint firstItem="9LJ-vy-PeE" firstAttribute="centerX" secondItem="f2T-ff-3Co" secondAttribute="centerX" id="Aa2-Tv-n4H"/>
+                            <constraint firstItem="h43-vb-BEY" firstAttribute="leading" secondItem="smr-e6-d92" secondAttribute="leading" id="E59-2j-ZBR"/>
+                            <constraint firstItem="K5z-Yc-Enk" firstAttribute="leading" secondItem="IRi-pz-Y51" secondAttribute="leading" constant="7" id="IKY-vo-hPV"/>
+                            <constraint firstItem="IRi-pz-Y51" firstAttribute="top" secondItem="9LJ-vy-PeE" secondAttribute="bottom" constant="15" id="JY0-3s-93Y" userLabel="Profile Image.top = Welcome Text.bottom + 10"/>
+                            <constraint firstItem="K5z-Yc-Enk" firstAttribute="top" secondItem="IRi-pz-Y51" secondAttribute="bottom" constant="10" id="Zpt-dA-1d0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="smr-e6-d92" secondAttribute="trailing" constant="8" id="bzW-cv-0VV"/>
+                            <constraint firstItem="9LJ-vy-PeE" firstAttribute="top" secondItem="GRi-DF-h3Q" secondAttribute="bottom" constant="15" id="rid-cp-Lm4" userLabel="Welcome Text.top = Top Layout Guide.bottom + 20"/>
+                            <constraint firstItem="h43-vb-BEY" firstAttribute="trailing" secondItem="smr-e6-d92" secondAttribute="trailing" id="rmw-LT-lcv"/>
+                            <constraint firstItem="IRi-pz-Y51" firstAttribute="top" secondItem="f2T-ff-3Co" secondAttribute="top" constant="80" id="smb-vB-9Yg"/>
+                            <constraint firstItem="smr-e6-d92" firstAttribute="top" secondItem="h43-vb-BEY" secondAttribute="bottom" constant="40" id="wLo-wA-xMp"/>
+                            <constraint firstItem="Ncy-2V-LgF" firstAttribute="top" secondItem="smr-e6-d92" secondAttribute="bottom" constant="28" id="zVc-Kg-YpZ"/>
                         </constraints>
                     </view>
                     <connections>
